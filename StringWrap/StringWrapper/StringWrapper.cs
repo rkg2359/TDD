@@ -8,5 +8,6 @@ namespace StringWrapper
 {
     public class StringWrapper
     {
+        
     }
 }

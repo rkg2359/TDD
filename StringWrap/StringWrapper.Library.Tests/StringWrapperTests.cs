@@ -11,9 +11,11 @@ namespace StringWrapper.Library.Tests
     public class Class1
     {
         [Test]
-        public void sampleTest()
+        public void returnString()
         {
-            Assert.Pass();
+            string input = "The Quick brown fox";
+            string output = StringWrapper.GetWrapper(input);
+            Assert.AreEqual(input, output);
         }
 
     }
