@@ -20,7 +20,13 @@ namespace StringWrapper
 
         public static bool GetCharCheck(string input, int col)
         {
-            throw new NotImplementedException();
+            bool check = false;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[col] != ' ')
+                    check = true;
+            }
+            return check;
         }
     }
 }
