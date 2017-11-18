@@ -17,5 +17,10 @@ namespace StringWrapper
         {
             return col;
         }
+
+        public static bool GetCharCheck(string input, int col)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
