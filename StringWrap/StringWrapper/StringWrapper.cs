@@ -15,7 +15,7 @@ namespace StringWrapper
 
         public static int GetColumn(int col)
         {
-            throw new NotImplementedException();
+            return col;
         }
     }
 }
