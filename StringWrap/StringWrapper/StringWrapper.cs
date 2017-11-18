@@ -12,5 +12,10 @@ namespace StringWrapper
         {
             return input;
         }
+
+        public static int GetColumn(int col)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

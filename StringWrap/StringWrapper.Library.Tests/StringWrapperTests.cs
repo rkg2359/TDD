@@ -17,6 +17,13 @@ namespace StringWrapper.Library.Tests
             string output = StringWrapper.GetWrapper(input);
             Assert.AreEqual(input, output);
         }
+        [Test]
+        public void checkIfColumnNumberReturns()
+        {
+            int col = 10;
+            int outputCol = StringWrapper.GetColumn(col);
+            Assert.AreEqual(col, outputCol);
+        }
 
     }
 }
