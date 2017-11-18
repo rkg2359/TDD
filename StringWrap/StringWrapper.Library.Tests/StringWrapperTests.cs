@@ -11,16 +11,16 @@ namespace StringWrapper.Library.Tests
     public class Class1
     {
         [Test]
-        public void returnString()
+        public void returnString(
+            [Values("the Quick brown fox")] string input)
         {
-            string input = "The Quick brown fox";
             string output = StringWrapper.GetWrapper(input);
             Assert.AreEqual(input, output);
         }
         [Test]
-        public void checkIfColumnNumberReturns()
+        public void checkIfColumnNumberReturns(
+            [Values(10)] int col)
         {
-            int col = 10;
             int outputCol = StringWrapper.GetColumn(col);
             Assert.AreEqual(col, outputCol);
         }
