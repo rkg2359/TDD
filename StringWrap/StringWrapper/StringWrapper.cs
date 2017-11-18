@@ -8,6 +8,9 @@ namespace StringWrapper
 {
     public class StringWrapper
     {
-        
+        public static string GetWrapper(string input)
+        {
+            return input;
+        }
     }
 }
