@@ -11,19 +11,14 @@ namespace StringWrapper.Library.Tests
     public class Class1
     {
         [Test]
-        public void returnString(
-            [Values("the Quick brown fox")] string input)
+        [TestCase("The Quick Brown fox",14)]
+        public void returnInputs(string input, int col)
         {
+            int column = col;
             string output = StringWrapper.GetWrapper(input);
             Assert.AreEqual(input, output);
         }
-        [Test]
-        public void checkIfColumnNumberReturns(
-            [Values(10)] int col)
-        {
-            int outputCol = StringWrapper.GetColumn(col);
-            Assert.AreEqual(col, outputCol);
-        }
+       
         [Test]
         public void charCheck(//check if char is null or valid char
             [Values(15)] int col)
