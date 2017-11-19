@@ -28,10 +28,29 @@ namespace StringWrapper
             }
             return check;
         }
-
+        public string input
+        {
+            set
+            {
+                input = value;
+            }
+        }
         public static bool GetIsBreak(string input, int col)
         {
-            throw new NotImplementedException();
+            bool o = false;
+            StringBuilder sb = new StringBuilder(input);
+            for(int i = 0; i < input.Length; i++)
+            {
+                if(i == col)
+                {
+                    sb[i] = '\n';
+                }
+            }
+            if (sb[col] == '\n')
+            {
+                o = true;
+            }
+            return o;
         }
     }
 }

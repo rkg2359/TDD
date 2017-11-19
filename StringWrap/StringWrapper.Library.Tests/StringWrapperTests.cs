@@ -20,16 +20,18 @@ namespace StringWrapper.Library.Tests
         }
         
         [Test]
-        [TestCase("The Quick Brown fox", 14)]
+        [TestCase("The Quick Brown fox", 2)]
         public void checkBreakCharacter(string input, int col)
         {
             bool isBreak = false;
-            
+            StringBuilder s = new StringBuilder(input);
             for(int i = 0; i < input.Length; i++)
             {
-                if (input[col].ToString() == Environment.NewLine)
-                    isBreak = true;
+                if (i == col)
+                    s[i] = '\n';
             }
+            if (s[col] == '\n')
+                isBreak = true;
             bool output = StringWrapper.GetIsBreak(input, col);
             Assert.AreEqual(isBreak, output);
         }
