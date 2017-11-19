@@ -18,7 +18,22 @@ namespace StringWrapper.Library.Tests
             string output = StringWrapper.GetWrapper(input);
             Assert.AreEqual(input, output);
         }
-       
+        
+        [Test]
+        [TestCase("The Quick Brown fox", 14)]
+        public void checkBreakCharacter(string input, int col)
+        {
+            bool isBreak = false;
+            
+            for(int i = 0; i < input.Length; i++)
+            {
+                if (input[col].ToString() == Environment.NewLine)
+                    isBreak = true;
+            }
+            bool output = StringWrapper.GetIsBreak(input, col);
+            Assert.AreEqual(isBreak, output);
+        }
+
         [Test]
         public void charCheck(//check if char is null or valid char
             [Values(15)] int col)

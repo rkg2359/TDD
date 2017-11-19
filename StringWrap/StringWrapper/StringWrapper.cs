@@ -28,5 +28,10 @@ namespace StringWrapper
             }
             return check;
         }
+
+        public static bool GetIsBreak(string input, int col)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
