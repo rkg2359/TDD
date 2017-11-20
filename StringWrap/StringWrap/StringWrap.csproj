@@ -48,5 +48,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StringWrapper.Library.Tests\StringWrapper.Library.Tests.csproj">
+      <Project>{e809f433-14e3-4766-88a2-fafbb2afe855}</Project>
+      <Name>StringWrapper.Library.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StringWrapper\StringWrapper.Library.csproj">
+      <Project>{c8948024-bb23-4e9f-b6ab-6be1fb358c20}</Project>
+      <Name>StringWrapper.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

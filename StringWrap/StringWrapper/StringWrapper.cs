@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace StringWrapper
 {
@@ -50,7 +51,14 @@ namespace StringWrapper
             {
                 o = true;
             }
+            Debug.WriteLine(input.Length);
+            Debug.WriteLine(sb.ToString());
             return o;
+        }
+
+        public static List<string> GetList(string input, int col)
+        {
+            return null;
         }
     }
 }
