@@ -73,7 +73,8 @@ namespace StringWrapper.Library.Tests
         [Test]
         public void emptyStringTest()
         {
-            Assert.Equals("", StringWrapper.GetList("", 5));
+            Assert.AreEqual(new List<string>(), StringWrapper.GetList("", 5));
+            //Assert.Equals(new List<string>(), StringWrapper.GetList("", 5));
         }
 
     }

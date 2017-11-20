@@ -47,8 +47,10 @@ namespace StringWrapper
 
         public static List<string> GetList(string input, int col)
         {
+
             List<string> outputList = new List<string>();
-          
+            if (input == String.Empty)
+                return new List<string>();
             string[] splitWords = input.Split(' ');
             foreach (string str in splitWords)
             {
