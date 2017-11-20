@@ -45,14 +45,12 @@ namespace StringWrapper.Library.Tests
         {
             List<string> lines = new List<string>();
             string[] words = input.Split(' ');
-            int wordCounter = 0;
+            
             foreach(string word in words)
             {
                 lines.Add(word);  
             }
-
             List<string> output = StringWrapper.GetList(input, col);
-            bool b = lines.SequenceEqual(output);
             Assert.AreEqual(words, output);
         }
 
