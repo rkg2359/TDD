@@ -40,18 +40,19 @@ namespace StringWrapper.Library.Tests
         }
 
         [Test]
-        [TestCase("The Quick Brown fox jumped over the bridge and laughed at others", 7)]
-        public void checkLines(string input, int col)
+        [TestCase("The quick brown fox jumped over the lazy dog", 15)]
+        public void checkLineBreaks(string input, int col)
         {
-            List<string> lines = new List<string>();
-            string[] words = input.Split(' ');
-            
-            foreach(string word in words)
-            {
-                lines.Add(word);  
-            }
-            List<string> output = StringWrapper.GetList(input, col);
-            Assert.AreEqual(words, output);
+            //List<string> lines = new List<string>();
+            //string[] words = input.Split(' ');
+
+            //foreach(string word in words)
+            //{
+            //lines.Add(word);  
+            //}
+            //List<string> output = StringWrapper.GetList(input, col);
+            string output = StringWrapper.GetInsertLineBreak(input, col);
+            Assert.AreEqual("The quick brown\nfox jumped over\nthe lazy dog.",output);
         }
 
         [Test]
@@ -76,6 +77,8 @@ namespace StringWrapper.Library.Tests
             Assert.AreEqual(new List<string>(), StringWrapper.GetList("", 5));
             //Assert.Equals(new List<string>(), StringWrapper.GetList("", 5));
         }
+
+
 
     }
 }

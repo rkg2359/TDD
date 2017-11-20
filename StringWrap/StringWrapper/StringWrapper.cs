@@ -58,5 +58,10 @@ namespace StringWrapper
             }
             return outputList;
         }
+
+        public static string GetInsertLineBreak(string input, int col)
+        {
+            return null;
+        }
     }
 }
