@@ -69,5 +69,12 @@ namespace StringWrapper.Library.Tests
             Assert.AreEqual(true, isChar);
 
         }
+
+        [Test]
+        public void emptyStringTest()
+        {
+            Assert.Equals("", StringWrapper.GetList("", 5));
+        }
+
     }
 }

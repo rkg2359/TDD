@@ -14,11 +14,6 @@ namespace StringWrapper
             return input;
         }
 
-        public static int GetColumn(int col)
-        {
-            return col;
-        }
-
         public static bool GetCharCheck(string input, int col)
         {
             bool check = false;
@@ -29,13 +24,7 @@ namespace StringWrapper
             }
             return check;
         }
-        public string input
-        {
-            set
-            {
-                input = value;
-            }
-        }
+
         public static bool GetIsBreak(string input, int col)
         {
             bool o = false;
