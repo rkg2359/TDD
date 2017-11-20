@@ -48,12 +48,12 @@ namespace StringWrapper.Library.Tests
             int wordCounter = 0;
             foreach(string word in words)
             {
-                lines[wordCounter] = word;
+                lines.Add(word);  
             }
 
             List<string> output = StringWrapper.GetList(input, col);
             bool b = lines.SequenceEqual(output);
-            Assert.IsTrue(b);
+            Assert.AreEqual(words, output);
         }
 
         [Test]

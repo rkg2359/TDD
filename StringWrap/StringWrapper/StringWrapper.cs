@@ -58,7 +58,16 @@ namespace StringWrapper
 
         public static List<string> GetList(string input, int col)
         {
-            return null;
+            List<string> o = new List<string>();
+          
+            string[] s = input.Split(' ');
+            int c = 0;
+            foreach (string str in s)
+            {
+                o.Add(str);
+            }
+
+            return o;
         }
     }
 }
