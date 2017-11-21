@@ -61,7 +61,30 @@ namespace StringWrapper
 
         public static string GetInsertLineBreak(string input, int col)
         {
-            return null;
+            char[] c = input.ToCharArray();
+            int lastLineBreak = 0;
+            bool shouldBreak = false;
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < c.Length; i++)
+            {
+                if(shouldBreak && c[i] == ' ')
+                {
+                    sb.Append('\n');
+                    lastLineBreak = i;
+                    shouldBreak = false;
+                } else
+                {
+                    sb.Append(c[i]);
+                    
+                }
+                if(i - lastLineBreak + 1 == col)
+                {
+                    shouldBreak = true;
+                }
+
+            }
+            
+            return sb.ToString();
         }
     }
 }

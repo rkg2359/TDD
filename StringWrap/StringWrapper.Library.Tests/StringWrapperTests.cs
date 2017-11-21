@@ -11,14 +11,6 @@ namespace StringWrapper.Library.Tests
     [TestFixture]
     public class Class1
     {
-        [Test]
-        [TestCase("The Quick Brown fox", 14)]
-        public void returnInputs(string input, int col)
-        {
-            int column = col;
-            string output = StringWrapper.GetWrapper(input);
-            Assert.AreEqual(input, output);
-        }
 
         [Test]
         [TestCase("The Quick Brown fox", 2)]
@@ -43,16 +35,8 @@ namespace StringWrapper.Library.Tests
         [TestCase("The quick brown fox jumped over the lazy dog", 15)]
         public void checkLineBreaks(string input, int col)
         {
-            //List<string> lines = new List<string>();
-            //string[] words = input.Split(' ');
-
-            //foreach(string word in words)
-            //{
-            //lines.Add(word);  
-            //}
-            //List<string> output = StringWrapper.GetList(input, col);
             string output = StringWrapper.GetInsertLineBreak(input, col);
-            Assert.AreEqual("The quick brown\nfox jumped over\nthe lazy dog.",output);
+            Assert.AreEqual("The quick brown\nfox jumped over\nthe lazy dog",output);
         }
 
         [Test]
