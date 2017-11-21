@@ -11,8 +11,8 @@ namespace StringWrap
     {
         static void Main(string[] args)
         {
-            string inp = "hello my name is Zack!";
-            Console.WriteLine(StringWrapper.StringWrapper.GetIsBreak(inp, 5));
+            //string inp = "hello my name is Zack!";
+            //Console.WriteLine(StringWrapper.StringWrapper.GetIsBreak(inp, 5));
         }
     }
 }

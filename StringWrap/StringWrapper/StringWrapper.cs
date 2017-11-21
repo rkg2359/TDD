@@ -10,51 +10,27 @@ namespace StringWrapper
     public class StringWrapper
     {
 
-        public static bool GetIsBreak(string input, int col)
-        {
-            bool output = false;
-            StringBuilder sb = new StringBuilder(input);
-            for(int i = 0; i < input.Length; i++)
-            {
-                if(i == col)
-                    sb[i] = '\n';
-                
-            }
-            if (sb[col] == '\n')
-                output = true;
-            
-            return output;
-        }
-
-
         public static string GetInsertLineBreak(string input, int col)
         {
 
-            if(input == null)
-            {
+            if (input == null)
                 return null;
-            }
 
-            char[] c = input.ToCharArray();
+            char[] chars = input.ToCharArray();
             int lastLineBreak = 0;
             bool shouldBreak = false;
             StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < c.Length; i++)
+            for(int i = 0; i < chars.Length; i++)
             {
-                if(shouldBreak && c[i] == ' ')
+                if(shouldBreak && chars[i] == ' ')
                 {
                     sb.Append('\n');
                     lastLineBreak = i;
                     shouldBreak = false;
                 } else
-                {
-                    sb.Append(c[i]);
-                    
-                }
+                    sb.Append(chars[i]);
                 if(i - lastLineBreak + 1 == col)
-                {
                     shouldBreak = true;
-                }
 
             }
             return sb.ToString();
