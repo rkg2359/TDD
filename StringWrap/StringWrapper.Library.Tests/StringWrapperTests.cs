@@ -11,7 +11,6 @@ namespace StringWrapper.Library.Tests
     [TestFixture]
     public class Class1
     {
-
         [Test]
         [TestCase("The Quick Brown fox", 2)]
         [TestCase("The Quick Brown fox", 9)]
@@ -19,13 +18,13 @@ namespace StringWrapper.Library.Tests
         public void checkBreakCharacter(string input, int col)
         {
             bool isBreak = false;
-            StringBuilder s = new StringBuilder(input);
+            StringBuilder sb = new StringBuilder(input);
             for (int i = 0; i < input.Length; i++)
             {
                 if (i == col)
-                    s[i] = '\n';
+                    sb[i] = '\n';
             }
-            if (s[col] == '\n')
+            if (sb[col] == '\n')
                 isBreak = true;
             bool output = StringWrapper.GetIsBreak(input, col);
             Assert.AreEqual(isBreak, output);
@@ -40,29 +39,9 @@ namespace StringWrapper.Library.Tests
         }
 
         [Test]
-        public void charCheck(//check if char is null or valid char
-            [Values(15)] int col)
-        {
-            string input = "brown fox jumped over the wall";
-            bool isChar = false;
-            for(int i = 0; i < input.Length; i++)
-            {
-                if (input[col] != ' ')
-                    isChar = true;
-            }
-            bool output = StringWrapper.GetCharCheck(input, col);
-            Assert.AreEqual(true, isChar);
-
-        }
-
-        [Test]
         public void emptyStringTest()
         {
-            Assert.AreEqual(new List<string>(), StringWrapper.GetList("", 5));
-            //Assert.Equals(new List<string>(), StringWrapper.GetList("", 5));
+            Assert.AreEqual("", StringWrapper.GetInsertLineBreak("", 5));
         }
-
-
-
     }
 }
